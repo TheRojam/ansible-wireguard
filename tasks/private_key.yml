@@ -1,6 +1,6 @@
 ---
   - name: Generate private key
-    shell: umask 077; wg genkey
+    ansible.builtin.shell: umask 077; wg genkey
     register: wireguard_private_key_cmd
     when: wireguard_private_key is not defined or wireguard_private_key == ""
 
