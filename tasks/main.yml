@@ -1,9 +1,9 @@
 ---
 - name: Install kernel headers matching kernel version
-  ansible.built.shell: "apt -y install linux-headers-$(uname -r)"
+  ansible.builtin.shell: "apt -y install linux-headers-$(uname -r)"
 
 - name: Install the WireGuard packages
-  ansible.built.package:
+  ansible.builtin.package:
     name: "{{ item }}"
   with_items:
     - wireguard-dkms
